@@ -120,7 +120,7 @@ func (c *Client) GetAccessToken() {
 //从微信服务器获取token
 func getAccessTokenFromWeixin(cropID, secret string) (TokenSession AccessToken, err error) {
 	WxAccessTokenURL := "https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=" + cropID + "&corpsecret=" + secret
-
+	fmt.Errorf("corID: %v, secret: %v", cropID, secret)
 	tr := &http.Transport{
 		TLSClientConfig:    &tls.Config{InsecureSkipVerify: true},
 		DisableCompression: true,
